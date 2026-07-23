@@ -1,5 +1,6 @@
-"""Creative Agent — generates new ad variants exploiting the top messaging gap,
-using the Groq LLM API grounded with competitor intelligence (RAG-style)."""
+Agent 5 – Creative (Developed by Shahana)
+Generates AI-powered advertisement copy using Groq (Llama) and creates professional promotional images using Pollinations AI.
+    
 import json
 from groq import Groq
 from config import GROQ_API_KEY
