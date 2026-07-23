@@ -1,9 +1,8 @@
----
-title: Scout Competitive Creative Intelligence
+---  Competitive Creative Intelligence
 
 ---
 
-# Scout — Competitive Creative Intelligence Engine
+#  Competitive Creative Intelligence Engine
 
 A multi-agent dashboard that researches competitor ads in real time and helps you respond with your own — powered by SerpAPI, ScrapingBee, Groq (Llama), and free AI image generation.
 
