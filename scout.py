@@ -1,25 +1,8 @@
-"""Scout Agent — collects competitor ad-like data from SerpAPI (Google organic,
-Google Ads, and Google Images) and the Facebook Ad Library, plus an optional
-LinkedIn company snapshot via ScrapingBee.
+Agent 1 – Scout (Developed by Sinega M.)
+Collects competitor advertisements and company information from Google Search, Google Images, Facebook Ad Library, and LinkedIn using external APIs.
 
-Real ad images: without an official ad-transparency API (Meta Ad Library or
-Google Ads Transparency Center), nothing can guarantee an image is *currently
-a live running ad*. What SerpAPI's Google Images engine gives us instead is
-genuine images pulled from the live web — ad galleries, brand social posts,
-marketing case studies that feature real creative. It's real, not a
-placeholder or AI-generated, but it's "images of real ads found via search,"
-not "verified live ad screenshot." Every image-bearing result is labeled
-accordingly (see `format` field below) so this distinction stays visible
-downstream instead of getting flattened into one generic "ad image."
 
-Why Facebook demo data: Meta's official /ads_archive endpoint only returns
-general commercial ads for the UK/EU (elsewhere it's scoped to political/
-social-issue ads only — see https://www.facebook.com/ads/library/api). Since
-this isn't a UK/EU political-ads use case, we use representative demo data
-for this source rather than forcing empty/irrelevant results out of an API
-that wasn't built to provide them. Flip USE_FACEBOOK_DEMO_DATA off in .env
-if you do have a working UK/EU or political-ads token.
-"""
+
 import hashlib
 from datetime import date
 
