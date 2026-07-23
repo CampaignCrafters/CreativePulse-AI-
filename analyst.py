@@ -1,11 +1,6 @@
-"""Analyst Agent — extracts structured intelligence (angle, hook, offer, cta)
-from each ad using keyword/rule-based matching. No LLM key required.
+Agent 2 – Analyst (Developed by Sanjay)
+Analyzes collected advertisements to extract the marketing angle, hook, offer, and call-to-action (CTA), and generates key insights.
 
-This trades some nuance for zero API dependency: it won't catch a clever
-angle phrased in an unusual way, but it's fast, free, and deterministic.
-Swap this for an LLM-backed version later (see the angle/offer/cta keys it
-produces — any replacement just needs to return the same shape).
-"""
 import re
 from utils.logger import get_logger
 
