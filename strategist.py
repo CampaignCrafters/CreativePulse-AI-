@@ -1,7 +1,6 @@
-"""Strategist Agent — clusters competitor messaging with TF-IDF embeddings,
-ranks angles by ad longevity (longevity = proven performance proxy),
-identifies messaging gaps the user hasn't tried, and ranks the top 5
-individual ads with human-readable reasoning for each ranking."""
+Agent 3 – Strategist (Developed by Shinas Begum)
+Uses TF-IDF and text analysis to rank advertisements, identify messaging patterns, and recommend effective marketing strategies
+
 from collections import defaultdict
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans
