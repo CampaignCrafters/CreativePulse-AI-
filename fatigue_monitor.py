@@ -1,9 +1,6 @@
-"""Fatigue Monitor — time-series anomaly detection on own-ad CTR.
+Agent 4 – Fatigue Monitor (Developed by Seljilin Brijo)
+Monitors CTR history to detect advertisement performance decline and sends automated email alerts when ad fatigue is identified.
 
-Method: rolling 7-day baseline vs recent 3-day mean. Flags fatigue when
-recent CTR drops >= 20% below baseline AND frequency exceeds 3.0 —
-thresholds drawn from industry-published fatigue playbooks
-(TheOptimizer, Triple Whale)."""
 import pandas as pd
 from config import (FATIGUE_CTR_DROP_PCT, FATIGUE_BASELINE_DAYS,
                     FATIGUE_RECENT_DAYS, FATIGUE_FREQUENCY_LIMIT)
