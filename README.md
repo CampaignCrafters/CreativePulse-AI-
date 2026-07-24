@@ -5,11 +5,11 @@ A multi-agent dashboard that researches competitor ads in real time and helps yo
 
 ## Team Description
 
-Sanjay - 8208E23ASR047
-Seljilin Brijo - 8208E23ASR048
-Shahana - 8208E23ASR049
-Shinas Begum - 8208E23ASR050
-Sinega - 8208E23ASR51
+1.Sanjay - 8208E23ASR047
+2.Seljilin Brijo - 8208E23ASR048
+3.Shahana - 8208E23ASR049
+4.Shinas Begum - 8208E23ASR050
+5.Sinega - 8208E23ASR51
 
 ## What it does
 
