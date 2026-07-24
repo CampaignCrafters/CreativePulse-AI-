@@ -1,10 +1,15 @@
----  Competitive Creative Intelligence
-
----
 
 #  Competitive Creative Intelligence Engine
 
 A multi-agent dashboard that researches competitor ads in real time and helps you respond with your own — powered by SerpAPI, ScrapingBee, Groq (Llama), and free AI image generation.
+
+## Team Description
+
+Sanjay - 8208E23ASR047
+Seljilin Brijo - 8208E23ASR048
+Shahana - 8208E23ASR049
+Shinas Begum - 8208E23ASR050
+Sinega - 8208E23ASR51
 
 ## What it does
 
