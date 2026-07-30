@@ -52,16 +52,7 @@ def run(ads: list, insights: dict) -> dict:
 
 
 def _score_ad(ad: dict, insight: dict, max_days: int) -> float:
-    """
-    Composite score (0-1) used to rank individual ads. Built entirely
-    from real, observable signals — no fabricated metrics:
-      - Longevity (days_running) vs the longest-running ad in this batch
-      - Whether a real creative image was found (stronger signal — visual
-        ads are typically higher-investment, higher-confidence creative)
-      - Whether a concrete offer was detected (% off, free shipping, etc.)
-      - Whether the ad uses an angle that already qualifies as "winning"
-        (i.e. avg longevity >= LONGEVITY_SUCCESS_DAYS across the batch)
-    """
+
     score = 0.0
 
     # Longevity — the single strongest real signal we have (60% weight)
@@ -85,8 +76,7 @@ def _score_ad(ad: dict, insight: dict, max_days: int) -> float:
 
 
 def _build_reason(ad: dict, insight: dict, rank: int, max_days: int) -> str:
-    """Builds a human-readable, data-grounded explanation for why this
-    ad ranked where it did — used directly in the dashboard UI."""
+    
     reasons = []
 
     days = ad.get("days_running", 0)
@@ -116,11 +106,7 @@ def _build_reason(ad: dict, insight: dict, rank: int, max_days: int) -> str:
 
 
 def rank_top_ads(ads: list, insights: dict, top_n: int = 5) -> list:
-    """
-    Ranks the collected ads and returns the top N with a real,
-    data-grounded reason for each ranking. Used by the dashboard's
-    Strategist panel (Agent 03).
-    """
+   
     if not ads:
         return []
 
