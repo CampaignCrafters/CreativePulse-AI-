@@ -1,6 +1,4 @@
-"""Entry point.
-Single run:      python main.py
-Scheduled loop:  python main.py --schedule"""
+
 import sys, json
 from orchestrator.graph import run_pipeline
 from config import RUN_INTERVAL_HOURS, MOCK_MODE
