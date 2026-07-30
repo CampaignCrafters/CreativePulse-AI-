@@ -16,6 +16,7 @@ ANGLE_KEYWORDS = {
     "quality": ["premium", "best", "top rated", "top-rated", "durable", "handcrafted"],
 }
 
+# Used to identify what action the advertiser wants customers to take.
 CTA_KEYWORDS = {
     "Shop Now": ["shop now", "shop the"],
     "Buy Now": ["buy now", "order now"],
@@ -24,7 +25,7 @@ CTA_KEYWORDS = {
     "Learn More": ["learn more", "find out"],
 }
 
-
+# Function: Detect Marketing Angle
 def _detect_angle(text: str) -> str:
     text = text.lower()
     for angle, keywords in ANGLE_KEYWORDS.items():
@@ -32,7 +33,7 @@ def _detect_angle(text: str) -> str:
             return angle
     return "general"
 
-
+# Function: Detect Offer
 def _detect_offer(text: str) -> str:
     match = re.search(r"(\d{1,3}\s?%\s?off)", text, re.IGNORECASE)
     if match:
@@ -41,7 +42,7 @@ def _detect_offer(text: str) -> str:
         return "free offer mentioned"
     return "none"
 
-
+# Function: Detect Call To Action (CTA)
 def _detect_cta(text: str) -> str:
     text = text.lower()
     for cta, keywords in CTA_KEYWORDS.items():
@@ -49,7 +50,7 @@ def _detect_cta(text: str) -> str:
             return cta
     return "Learn More"
 
-
+# Function: Analyze One Advertisement
 def _analyze_one(ad: dict) -> dict:
     text = f"{ad.get('headline', '')} {ad.get('body', '')}"
     return {
@@ -59,7 +60,9 @@ def _analyze_one(ad: dict) -> dict:
         "cta": _detect_cta(text),
     }
 
-
+# Main Function
+# Receives all competitor advertisements collected
+# by the Scout Agent.
 def run(ads: list) -> dict:
     insights = {}
     for ad in ads:
