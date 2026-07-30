@@ -118,10 +118,12 @@ def rank_top_ads(ads: list, insights: dict, top_n: int = 5) -> list:
 
     # Mark which insights belong to a "winning" angle for this batch,
     # using the same threshold as run()'s winning_angles calculation.
+    #It's recalculated here so that rank_top_ads can be called on its own, independently, without needing run() to have executed first.
     angle_days = defaultdict(list)
     for ad in ads:
         angle = insights.get(ad["ad_id"], {}).get("angle", "general")
         angle_days[angle].append(ad.get("days_running", 0))
+        #for every angle, calculate its average days_running, and if it meets the threshold, include just the angle name
     winning_angle_set = {
         angle for angle, days_list in angle_days.items()
         if (sum(days_list) / len(days_list)) >= LONGEVITY_SUCCESS_DAYS
