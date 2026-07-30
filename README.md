@@ -88,10 +88,12 @@ Open `http://localhost:7860` (or the port shown in your terminal).
 
 - **Facebook Ad Library**: Meta's official API only returns commercial ads for the UK/EU (elsewhere it's political/social-issue ads only) — demo data is used by default outside that scope. See `agents/scout.py`
 -  for details.
+- **Google Custom Search**: evaluated but not used — requires a billing-linked Google Cloud project and overlaps with SerpAPI's coverage.
+- **Product/ad images**: sourced live from Google Images via SerpAPI (real images, not verified "currently running" ad screenshots unless coming from a real Facebook Ad Library snapshot).
 
   ## Output
 <img width="1088" height="646" alt="image" src="https://github.com/user-attachments/assets/2bda88ea-429f-4e2b-a79e-b57f39e8224d" />
-                                  FIGURE 1: SCOUT AGENT
+                                   FIGURE 1: SCOUT AGENT
 <img width="1117" height="570" alt="image" src="https://github.com/user-attachments/assets/3d764525-2bcb-44e0-82ee-183158f1bc9f" />
                                   FIGURE 2: Analyst agent 
 <img width="1157" height="685" alt="image" src="https://github.com/user-attachments/assets/4b8f3ad3-cf52-4543-b347-a2f6c93092a8" />
