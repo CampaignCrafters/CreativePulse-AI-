@@ -3,17 +3,7 @@
 
 A multi-agent dashboard that researches competitor ads in real time and helps you respond with your own — powered by SerpAPI, ScrapingBee, Groq (Llama), and free AI image generation.
 
-## Team Description
 
-1.Sanjay.R - 8208E23ASR047
-
-2.Seljilin Brijo.S - 8208E23ASR048
-
-3.Shahana.K - 8208E23ASR049
-
-4.Shinas Begum.M - 8208E23ASR050
-
-5.Sinega.M - 8208E23ASR51
 
 ## What it does
 
