@@ -1,12 +1,4 @@
-"""orchestrator/pipeline.py — runs the full agent loop end to end.
 
-    Scout -> Analyst -> Strategist -> Fatigue Monitor -> Creative
-
-Each agent in agents/ is independent and can be unit-tested on its own.
-This module only handles sequencing, persistence between runs, and the
-fatigue-gated trigger for creative generation (per the product loop:
-"when fatigue is detected, generate new variants using the gap angle").
-"""
 from agents import scout, analyst, strategist, fatigue_monitor, creative
 from database.store import load_known_ids, save_known_ids, save_report
 from config import CTR_CSV_PATH, COMPETITORS
