@@ -1,4 +1,4 @@
-Agent 4 – Fatigue Monitor (Developed by Seljilin Brijo)
+Agent 4 – Fatigue Monitor 
 Monitors CTR history to detect advertisement performance decline and sends automated email alerts when ad fatigue is identified.
 
 import pandas as pd
