@@ -92,23 +92,19 @@ Open `http://localhost:7860` (or the port shown in your terminal).
 - **Product/ad images**: sourced live from Google Images via SerpAPI (real images, not verified "currently running" ad screenshots unless coming from a real Facebook Ad Library snapshot).
 
   ## Output
-<img width="1088" height="646" alt="image" src="https://github.com/user-attachments/assets/2bda88ea-429f-4e2b-a79e-b57f39e8224d" />
-                                   FIGURE 1: SCOUT AGENT
-<img width="1117" height="570" alt="image" src="https://github.com/user-attachments/assets/3d764525-2bcb-44e0-82ee-183158f1bc9f" />
-                                  FIGURE 2: Analyst agent 
-<img width="1157" height="685" alt="image" src="https://github.com/user-attachments/assets/4b8f3ad3-cf52-4543-b347-a2f6c93092a8" />
-                                  FIGURE 3: Strategist Agent
-<img width="1167" height="667" alt="image" src="https://github.com/user-attachments/assets/ed868f4c-dad7-4951-a411-f55eee6a02cd" />
-                                  FIGURE 4: Fatigue Agent
-<img width="1147" height="591" alt="image" src="https://github.com/user-attachments/assets/3cd94097-2524-4837-beed-05f991b3876a" />
-                                FIGURE 5 : Creative Agent
-<img width="1113" height="626" alt="image" src="https://github.com/user-attachments/assets/331b84a7-2342-4f21-b7b6-8ed6f60d4a6d" />
-                               FIGURE 6 : Creative Agent Output Result
+<img width="1138" height="717" alt="image" src="https://github.com/user-attachments/assets/2c49b647-6021-4484-b82a-ec502f6e2524" />
+<img width="1195" height="748" alt="image" src="https://github.com/user-attachments/assets/be2f5c25-f22d-454f-b40b-59edacee6d8d" />
+<img width="1235" height="722" alt="image" src="https://github.com/user-attachments/assets/b79cd32c-63ee-462c-9ded-cf26fad03185" />
+<img width="1270" height="748" alt="image" src="https://github.com/user-attachments/assets/05fcc835-14be-41e1-a2a5-28a89af7073d" />
+<img width="1232" height="740" alt="image" src="https://github.com/user-attachments/assets/107dfba3-e63b-4ed2-89bf-1cbf602a5c0f" />
+<img width="828" height="517" alt="image" src="https://github.com/user-attachments/assets/17900d66-094e-4291-8a67-13b9a484393f" />
+
+
+
+                                 
                                 
                             
                                   
                                   
                                   
-                                  
-- **Google Custom Search**: evaluated but not used — requires a billing-linked Google Cloud project and overlaps with SerpAPI's coverage.
-- **Product/ad images**: sourced live from Google Images via SerpAPI (real images, not verified "currently running" ad screenshots unless coming from a real Facebook Ad Library snapshot).
+                    
