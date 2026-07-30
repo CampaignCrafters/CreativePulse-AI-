@@ -19,11 +19,8 @@ A multi-agent dashboard that researches competitor ads in real time and helps yo
 
 ```
 project/
-├── Dockerfile                  # Hugging Face Spaces container definition
-├── README.md                   # this file (also the Space's landing page)
 ├── requirements.txt            # Python dependencies
-├── .dockerignore
-├── .env.example                # template — copy to .env for local runs, or use HF Spaces "Secrets" in production
+├── .env                        # template — copy to .env for local runs, or use HF Spaces "Secrets" in production
 │
 ├── server.py                   # Flask app — serves the dashboard + all /api/* endpoints
 ├── main.py                     # CLI entry point for the original batch pipeline (python main.py)
@@ -87,12 +84,7 @@ python server.py
 ```
 Open `http://localhost:7860` (or the port shown in your terminal).
 
-## Deploying to Hugging Face Spaces
 
-1. Create a new Space → SDK: **Docker**
-2. Push this repo's contents (including `Dockerfile` and this `README.md`) to the Space's git remote
-3. Go to **Settings → Repository secrets** and add each environment variable above — never commit `.env` itself
-4. The Space builds automatically and becomes available at `https://<your-username>-<space-name>.hf.space`
 
 ## Notes on data sources
 
