@@ -97,7 +97,8 @@ Open `http://localhost:7860` (or the port shown in your terminal).
 <img width="1235" height="722" alt="image" src="https://github.com/user-attachments/assets/b79cd32c-63ee-462c-9ded-cf26fad03185" />
 <img width="1270" height="748" alt="image" src="https://github.com/user-attachments/assets/05fcc835-14be-41e1-a2a5-28a89af7073d" />
 <img width="1232" height="740" alt="image" src="https://github.com/user-attachments/assets/107dfba3-e63b-4ed2-89bf-1cbf602a5c0f" />
-<img width="828" height="517" alt="image" src="https://github.com/user-attachments/assets/17900d66-094e-4291-8a67-13b9a484393f" />
+<img width="786" height="465" alt="image" src="https://github.com/user-attachments/assets/c6768ea0-4ec9-414a-b335-c8c9675fe2e1" />
+
 
 
 
