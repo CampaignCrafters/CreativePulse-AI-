@@ -5,9 +5,8 @@ Collects competitor advertisements and company information from Google Search, G
 
 import hashlib
 from datetime import date
-
 import requests
-
+## reads these values from the .env file.
 from config import (
     SERPAPI_KEY, SCRAPINGBEE_API_KEY, FACEBOOK_ACCESS_TOKEN,
     USE_FACEBOOK_DEMO_DATA, COMPETITORS, META_AD_TYPE, META_AD_REACHED_COUNTRIES,
@@ -16,12 +15,12 @@ from utils.logger import get_logger
 
 log = get_logger("scout")
 
-
+## Creates a unique ID for every advertisement.
 def _make_ad_id(*parts) -> str:
     raw = "|".join(str(p) for p in parts)
     return hashlib.sha1(raw.encode()).hexdigest()[:16]
 
-
+## Searches Google and collects Organic Search results and Google Ads.
 def _search_serpapi(query: str, num_results: int = 5) -> dict:
     """Returns {"organic": [...], "ads": [...]} via SerpAPI's Google engine."""
     if not SERPAPI_KEY:
@@ -55,17 +54,8 @@ def _search_serpapi(query: str, num_results: int = 5) -> dict:
         log.error("SerpAPI request failed for '%s': %s", query, e)
         return {"organic": [], "ads": []}
 
-
+##Searches Google Images for advertisement images.
 def _search_serpapi_images(query: str, num_results: int = 3) -> list:
-    """Real images from Google Images via SerpAPI.
-
-    Honesty note: these are genuine images pulled from the live web (ad
-    galleries, brand social posts, marketing case studies) — not placeholders,
-    not AI-generated. But unlike Meta's ad_snapshot_url, there's no guarantee
-    a given image is *currently a live running ad* — that guarantee only comes
-    from an official ad-transparency API (Meta/Google Ads Transparency Center).
-    This is the best real-image source available with a SerpAPI-only setup.
-    """
     if not SERPAPI_KEY:
         log.warning("SERPAPI_KEY missing — skipping image search for '%s'", query)
         return []
@@ -96,7 +86,7 @@ def _search_serpapi_images(query: str, num_results: int = 3) -> list:
         log.error("SerpAPI image search failed for '%s': %s", query, e)
         return []
 
-
+## Creates sample Facebook advertisements.
 def _facebook_demo_ads(competitor: str) -> list:
     """Representative sample ad data — see module docstring for why."""
     return [
@@ -112,7 +102,7 @@ def _facebook_demo_ads(competitor: str) -> list:
 META_API_URL = "https://graph.facebook.com/v21.0/ads_archive"
 META_FIELDS = "id,ad_creative_bodies,ad_creative_link_titles,ad_delivery_start_time,publisher_platforms,ad_snapshot_url"
 
-
+##Retrieves real Facebook advertisements using the Meta API.
 def _fetch_real_facebook_ads(competitor: str) -> list:
     """Real Meta Ad Library call. Returns [] on any failure so the caller can
     fall back to demo data — never raises out of this function."""
@@ -158,7 +148,7 @@ def _fetch_real_facebook_ads(competitor: str) -> list:
         log.warning("Meta Ad Library request failed for '%s': %s", competitor, e)
         return []
 
-
+## Combines data from Google Search, Google Ads, Images, and Facebook.
 def _fetch_competitor(competitor: str) -> list:
     """Gathers everything Scout can find for one competitor into a unified ad list."""
     ads = []
@@ -229,7 +219,7 @@ def _fetch_competitor(competitor: str) -> list:
 
     return ads
 
-
+##Retrieves LinkedIn company page status.
 def get_linkedin_snapshot(competitor: str) -> dict:
     """Optional supplementary lookup — LinkedIn company page via ScrapingBee.
     Not fed into the ad-intelligence pipeline (a company page isn't ad creative);
@@ -253,7 +243,7 @@ def get_linkedin_snapshot(competitor: str) -> dict:
         log.warning("ScrapingBee request failed for '%s': %s", competitor, e)
         return {"competitor": competitor, "status": "unavailable", "url": url}
 
-
+## Executes the complete Scout Agent workflow.
 def run(known_ids: set):
     """Main entry point — matches the orchestrator's expected signature."""
     if not COMPETITORS:
