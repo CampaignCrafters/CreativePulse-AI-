@@ -18,17 +18,21 @@ def run(ads: list, insights: dict) -> dict:
         return {"winning_angles": [], "gaps": [], "clusters": {}}
 
     # 1. Cluster ad texts into messaging groups (TF-IDF + KMeans)
+     # Combine headline + body into one text blob per ad
     texts = [a["headline"] + " " + a["body"] for a in ads]
+    # Never ask for more clusters than we have ads
     n_clusters = min(N_CLUSTERS, len(texts))
     vec = TfidfVectorizer(stop_words="english")
     X = vec.fit_transform(texts)
     labels = KMeans(n_clusters=n_clusters, random_state=42, n_init=10).fit_predict(X)
 
     # 2. Rank angles by average longevity of ads using them
+    # collect how many days each angle's ads have run
     angle_days = defaultdict(list)
     for ad in ads:
         angle = insights.get(ad["ad_id"], {}).get("angle", "general")
         angle_days[angle].append(ad["days_running"])
+        # sort angles by average lifespan, best first
     ranked = sorted(
         ((angle, sum(d) / len(d), len(d)) for angle, d in angle_days.items()),
         key=lambda t: t[1], reverse=True,
