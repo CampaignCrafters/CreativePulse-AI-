@@ -1,4 +1,12 @@
+"""
+Entry Point of the Project
 
+Command to run once:
+    python main.py
+
+Command to run continuously (Scheduler Mode):
+    python main.py --schedule
+"""
 import sys, json
 from orchestrator.graph import run_pipeline
 from config import RUN_INTERVAL_HOURS, MOCK_MODE
