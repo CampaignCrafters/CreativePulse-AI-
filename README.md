@@ -84,6 +84,9 @@ python server.py
 ```
 Open `http://localhost:7860` (or the port shown in your terminal).
 
+## Live Deployment
+Open ```https://creative-intelligence.onrender.com/```
+
 ## Notes on data sources
 
 - **Facebook Ad Library**: Meta's official API only returns commercial ads for the UK/EU (elsewhere it's political/social-issue ads only) — demo data is used by default outside that scope. See `agents/scout.py`
